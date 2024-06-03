@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 // src/App.js
 // // <h1> hello this is my first react app </h1>
