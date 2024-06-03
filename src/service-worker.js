@@ -6,8 +6,9 @@ const CACHE_NAME = 'my-app-cache';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/static/js/bundle.js',
-  // Add other resources you want to cache
+  '/static/js/main.js',  // Update with the path to your main JavaScript bundle
+  '/static/css/main.css', // Update with the path to your main CSS file
+  // Add other assets as needed
 ];
 
 self.addEventListener('install', event => {
