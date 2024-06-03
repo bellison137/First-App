@@ -3,19 +3,20 @@
 // src/service-worker.js
 
 const CACHE_NAME = 'my-app-cache';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/static/js/main.js',  // Update with the path to your main JavaScript bundle
-  '/static/css/main.css', // Update with the path to your main CSS file
-  // Add other assets as needed
-];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        return cache.addAll(urlsToCache);
+        return cache.addAll([
+          '/',
+          '/index.html',
+          '/manifest.json', // Include the manifest file
+          // Add other assets as needed
+          '/static/js/bundle.js', // Example path to your main JavaScript bundle
+          '/static/css/main.css', // Example path to your main CSS file
+          // Add paths to other assets included in the manifest
+        ]);
       })
   );
 });
@@ -33,12 +34,11 @@ self.addEventListener('fetch', event => {
 });
 
 self.addEventListener('activate', event => {
-  const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (!cacheWhitelist.includes(cacheName)) {
+          if (cacheName !== CACHE_NAME) {
             return caches.delete(cacheName);
           }
         })
