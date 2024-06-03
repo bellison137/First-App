@@ -10,7 +10,7 @@ import DogAPI from './components/DogAPI';
 function App() {
   return (
     <div className="App">
-    <h1> hello this is my first react app </h1>
+    <h1> hello this is my second react app </h1>
     <Header />
     <h1>My Dog API</h1>
       <DogAPI />
