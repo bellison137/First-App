@@ -1,7 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "description": "A sample PWA created with Create React App",
+  "short_name": "Heard",
+  "name": "Create React App Heard",
+  "description": "A sample PWA created with Create React App by Ellison",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,12 +9,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "192HeardLogo.jpg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "512HeardLogo.jpg",
       "type": "image/png",
       "sizes": "512x512"
     }
