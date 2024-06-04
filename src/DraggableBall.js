@@ -29,7 +29,7 @@ const DraggableBall = () => {
         ballRef.current.style.transition = 'top 0.5s ease';
         const boxRect = boxRef.current.getBoundingClientRect();
         const ballRect = ballRef.current.getBoundingClientRect();
-        const distanceToFall = boxRect.height - ballRect.top - ballRef.current.offsetHeight;
+        const distanceToFall = boxRect.height - (ballRect.top - boxRect.top + ballRect.height);
         ballRef.current.style.top = `${ballRef.current.offsetTop + distanceToFall}px`;
       }
     };
